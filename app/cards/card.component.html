@@ -1,0 +1,18 @@
+<ActionBar title="Dessert Matchmaker" class="action-bar"></ActionBar>
+
+<StackLayout>
+
+<AbsoluteLayout horizontalAlignment="center" paddingTop="30" #absolutelayout>
+    <GridLayout width="100%" style="z-index:1" columns="*,*" horizontalAlignment="center">
+        <Label #no col="0" verticalAlignment="center"  text="no, thanks!" class="no"></Label>
+        <Label #yes col="1" text="yes, please!" class="yes"></Label>
+    </GridLayout>
+</AbsoluteLayout>
+
+    <GridLayout columns="auto,auto,auto" horizontalAlignment="center" paddingBottom="10">
+        <Button class="btn fa" col="0" [text]="'fa-times' | fonticon"horizontalAlignment="right"></Button>
+        <Button class="btnsm fa-small" col="1" [text]="'fa-info' | fonticon"></Button>
+        <Button class="btn fa" col="2" [text]="'fa-heart-o' | fonticon" horizontalAlignment="left" ></Button>
+    </GridLayout>
+
+</StackLayout>
