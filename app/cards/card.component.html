@@ -10,9 +10,9 @@
 </AbsoluteLayout>
 
     <GridLayout columns="auto,auto,auto" horizontalAlignment="center" paddingBottom="10">
-        <Button class="btn fa" col="0" [text]="'fa-times' | fonticon"horizontalAlignment="right"></Button>
+        <Button #swipeleft class="btn fa" col="0" [text]="'fa-times' | fonticon"></Button>
         <Button class="btnsm fa-small" col="1" [text]="'fa-info' | fonticon"></Button>
-        <Button class="btn fa" col="2" [text]="'fa-heart-o' | fonticon" horizontalAlignment="left" ></Button>
+        <Button #swiperight class="btn fa" col="2" [text]="'fa-heart-o' | fonticon"></Button>
     </GridLayout>
 
 </StackLayout>
