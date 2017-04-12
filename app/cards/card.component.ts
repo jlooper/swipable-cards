@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild, ElementRef } from "@angular/core";
 import { SwipeGestureEventData, GesturesObserver, GestureTypes } from "ui/gestures";
-import { GridLayout, ItemSpec, GridUnitType } from "ui/layouts/grid-layout";
+import { GridLayout } from "ui/layouts/grid-layout";
 import { AbsoluteLayout } from "ui/layouts/absolute-layout";
 import { Label } from "ui/label";
 import { Button } from "ui/button";
@@ -39,14 +39,8 @@ export class CardComponent implements OnInit {
         }
     }
 
-    like(button: Button){
-
-        console.log("I like it!")
-
-    }
-
     handleSwipe(key: any) {
-        
+
         this.i--;
 
         let grid = new GridLayout();
@@ -57,8 +51,6 @@ export class CardComponent implements OnInit {
         let absolutelayout = <AbsoluteLayout>this.al.nativeElement;
         let swipeleft = <Button>this.swipeleft.nativeElement;
         let swiperight = <Button>this.swiperight.nativeElement;
-        
-        let duration = 100;
 
         //set the emoji on the card
         emoji.text = this.emoji[key].code;
@@ -74,66 +66,44 @@ export class CardComponent implements OnInit {
 
         //handle tapping
         /*swiperight.addEventListener("tap", function(){
-            yes.animate({ opacity: 0, duration: duration })
-                    .then(() => yes.animate({ opacity: 1, duration: duration }))
-                    .then(() => yes.animate({ opacity: 0, duration: duration }))
-                    .catch((e) => {
-                        console.log(e.message);
-                    });
-                //slow this down
-                grid.animate({ translate: { x: 1000, y: 100 } })
-                    .then(function () { return grid.animate({ translate: { x: 0, y: -2000 } }); })
-                    .catch(function (e) {
-                        console.log(e.message);
-                    });
+            //animate yes
         });
 
         swipeleft.addEventListener("tap", function(){
-            no.animate({ opacity: 0, duration: duration })
-                    .then(() => no.animate({ opacity: 1, duration: duration }))
-                    .then(() => no.animate({ opacity: 0, duration: duration }))
-                    .catch((e) => {
-                        console.log(e.message);
-                    });
-                //slow this down
-                grid.animate({ translate: { x: 1000, y: 100 } })
-                    .then(function () { return grid.animate({ translate: { x: 0, y: -2000 } }); })
-                    .catch(function (e) {
-                        console.log(e.message);
-                    });
+            //animate no
         })*/
 
         //make card swipable
         grid.on(GestureTypes.swipe, function (args: SwipeGestureEventData) {
             if (args.direction == 1) {
-
-                yes.animate({ opacity: 0, duration: duration })
-                    .then(() => yes.animate({ opacity: 1, duration: duration }))
-                    .then(() => yes.animate({ opacity: 0, duration: duration }))
+                //right
+                yes.animate({ opacity: 0, duration: 100 })
+                    .then(() => yes.animate({ opacity: 1, duration: 100 }))
+                    .then(() => yes.animate({ opacity: 0, duration: 100 }))
+                    .then(() =>
+                        grid.animate({ translate: { x: 1000, y: 100 } })
+                            .then(function () { return grid.animate({ translate: { x: 0, y: -2000 } }); })
+                            .catch(function (e) {
+                                console.log(e.message);
+                            })
+                    )
                     .catch((e) => {
-                        console.log(e.message);
-                    });
-                //slow this down
-                grid.animate({ translate: { x: 1000, y: 100 } })
-                    .then(function () { return grid.animate({ translate: { x: 0, y: -2000 } }); })
-                    .catch(function (e) {
                         console.log(e.message);
                     });
             }
             else {
-
-                console.log("swipe left")
-
-                no.animate({ opacity: 0, duration: duration })
-                    .then(() => no.animate({ opacity: 1, duration: duration }))
-                    .then(() => no.animate({ opacity: 0, duration: duration }))
+                //left
+                no.animate({ opacity: 0, duration: 100 })
+                    .then(() => no.animate({ opacity: 1, duration: 100 }))
+                    .then(() => no.animate({ opacity: 0, duration: 100 }))
+                    .then(() =>
+                        grid.animate({ translate: { x: -1000, y: 100 } })
+                            .then(function () { return grid.animate({ translate: { x: 0, y: -2000 } }); })
+                            .catch(function (e) {
+                                console.log(e.message);
+                            })
+                    )
                     .catch((e) => {
-                        console.log(e.message);
-                    });
-                //slow this down
-                grid.animate({ translate: { x: -1000, y: 100 } })
-                    .then(function () { return grid.animate({ translate: { x: 0, y: -2000 } }); })
-                    .catch(function (e) {
                         console.log(e.message);
                     });
             }
