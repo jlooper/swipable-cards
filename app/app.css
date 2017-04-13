@@ -1,20 +1,12 @@
+@import 'platform.css';
+
 Page {
-    background-color: #F8DECF
+    background-color: #F8DECF;
 } 
 .action-bar {
     background-color:#F67982;
     color: #FAEEC3;
 }   
-    
-.card{
-	margin: 20;
-    padding: 20;
-	border-radius: 5;
-    text-align: center;
-    font-size: 150;
-    width:90%;
-    height: 75%;
-}
 .btn {
     border-width: 5;
     border-color: lightgray;
@@ -50,36 +42,6 @@ Page {
 }
 .b6 {
     background-color: #F67982;
-}
-
-.yes{
-    z-index: 1;
-    color: green;
-    padding: 10;
-    border-color: green;
-    border-width: 5;
-    border-radius: 5;
-    margin-top: 50;
-    margin-right: 40;
-    background-color: white;
-    text-align: center;
-    opacity: 0;
-    transform: rotate(25deg);
-}
-
-.no{
-    z-index: 1;
-    color: red;
-    padding: 10;
-    border-color: red;
-    border-width: 5;
-    border-radius: 5;
-    margin-top: 50;
-    margin-left: 40;
-    background-color: white;
-    text-align: center;
-    transform: rotate(-25deg);
-    opacity: 0;
 }
 
 .fa {

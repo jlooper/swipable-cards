@@ -2,12 +2,12 @@
 
 <StackLayout>
 
-<AbsoluteLayout horizontalAlignment="center" paddingTop="30" #absolutelayout>
-    <GridLayout width="100%" style="z-index:1" columns="*,*" horizontalAlignment="center">
-        <Label #no col="0" verticalAlignment="center"  text="no, thanks!" class="no"></Label>
-        <Label #yes col="1" text="yes, please!" class="yes"></Label>
-    </GridLayout>
-</AbsoluteLayout>
+    <AbsoluteLayout horizontalAlignment="center" paddingTop="30" #absolutelayout>
+        <GridLayout width="100%" style="z-index:1" columns="*,*" horizontalAlignment="center">
+            <Label #no col="0" verticalAlignment="center" text="no, thanks!" class="no"></Label>
+            <Label #yes col="1" text="yes, please!" class="yes"></Label>
+        </GridLayout>
+    </AbsoluteLayout>
 
     <GridLayout columns="auto,auto,auto" horizontalAlignment="center" paddingBottom="10">
         <Button #swipeleft class="btn fa" col="0" [text]="'fa-times' | fonticon"></Button>

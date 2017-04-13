@@ -54,12 +54,14 @@ export class CardComponent implements OnInit {
 
         //set the emoji on the card
         emoji.text = this.emoji[key].code;
+        //android specific
+        emoji.verticalAlignment = "center";
 
         //build the grid which is the card
         grid.cssClass = 'card ' + this.emoji[key].color;
         grid.id = 'card' + Number(key);
         grid.marginTop = this.i;
-
+        
         //add the emoji to the grid, and the grid to the absolutelayout
         grid.addChild(emoji);
         absolutelayout.addChild(grid)
